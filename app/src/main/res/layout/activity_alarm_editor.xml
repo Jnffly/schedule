@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/theme"
+        tools:ignore="MissingConstraints">
+        <ImageButton
+            android:id="@+id/AlarmEditorBackButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/Transparent"
+            android:src="@drawable/ic_toolbar_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/AlarmEditorTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="闹钟配置"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/AlarmEditorBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="5dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout style="@style/itemLinearLayout">
+        <TextView android:text="上班时间："
+            style="@style/titleTextView"/>
+
+        <TextView style="@style/titleTextView"
+            android:text=" "
+            android:id="@+id/AlarmEditorShiftTime"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/itemLinearLayout">
+        <TextView style="@style/titleTextView"
+            android:textStyle="bold"
+            android:text="闹钟状态："/>
+        <Switch
+            android:id="@+id/AlarmEditorSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/itemLinearLayout">
+        <TextView style="@style/titleTextView"
+            android:textSize="18sp"
+            android:text="白班闹钟时间："/>
+
+        <TextView style="@style/titleTextView"
+            android:text=" "
+            android:id="@+id/AlarmEditorDay"
+            android:textSize="18sp"/>
+
+        <TextView style="@style/noticeTextView"
+            android:text=" "
+            android:id="@+id/AlarmEditorDayHint"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/itemLinearLayout">
+
+        <TextView style="@style/titleTextView"
+            android:textSize="18sp"
+            android:text="夜班闹钟时间："/>
+
+        <TextView style="@style/titleTextView"
+            android:text=" "
+            android:id="@+id/AlarmEditorNight"
+            android:textSize="18sp"/>
+
+        <TextView style="@style/noticeTextView"
+            android:text=" "
+            android:id="@+id/AlarmEditorNightHint"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/itemLinearLayout">
+        <TextView style="@style/titleTextView"
+            android:textSize="18sp"
+            android:text="休假自动关闭所有闹钟："/>
+
+        <Switch
+            android:id="@+id/AlarmEditorRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

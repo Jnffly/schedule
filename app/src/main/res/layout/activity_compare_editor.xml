@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".activity.CompareEditorActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/theme"
+        tools:ignore="MissingConstraints">
+        <ImageButton
+            android:id="@+id/CompareEditorBackButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/Transparent"
+            android:src="@drawable/ic_toolbar_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/AlarmEditorTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="班次调整"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/CompareEditorBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="5dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout style="@style/itemLinearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        tools:ignore="MissingConstraints">
+
+        <EditText style="@style/defaultTextEditor"
+            android:hint="输入配置名"
+            android:id="@+id/CompareEditorNameET"/>
+
+        <Button
+            android:id="@+id/CompareEditorNameOperationButton"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text=" "/>
+        
+        <TextView style="@style/noticeTextView"
+            android:text=" "
+            android:id="@+id/CompareEditorNameNotice"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/itemLinearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="120dp"
+        tools:ignore="MissingConstraints">
+        
+        <TextView style="@style/titleTextView"
+            android:textStyle="bold"
+            android:text="选择用户：" />
+
+        <TextView style="@style/titleTextView"
+            android:id="@+id/CompareEditorCheckedUsers"
+            android:textSize="18sp"
+            android:text="点击选择" />
+        
+    </LinearLayout>
+
+    <LinearLayout style="@style/itemLinearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="190dp"
+        android:orientation="horizontal"
+        android:layout_height="60dp"
+        tools:ignore="MissingConstraints">
+        
+        <TextView style="@style/titleTextView"
+            android:textStyle="bold"
+            android:text="选择月份："/>
+
+        <TextView style="@style/titleTextView"
+            android:id="@+id/CompareEditorMonth"
+            android:textSize="18sp"
+            android:text="点击选择"/>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="260dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_general_background"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:id="@+id/CompareEditorHeaderTL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scrollbars="vertical"
+            android:orientation="vertical"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/CompareEditorMainerRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scrollbars="vertical"
+                android:orientation="vertical"/>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+    
+
+
+    
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

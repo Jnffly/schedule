@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.UserEditorActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/theme">
+
+        <ImageButton
+            android:id="@+id/UserEditorBackButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/Transparent"
+            android:src="@drawable/ic_toolbar_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/UserEditorTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配置"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/UserEditorBackButton"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="5dp"/>
+
+        <ImageButton
+            android:id="@+id/UserEditorDeleteButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/theme"
+            android:src="@drawable/ic_editor_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            android:layout_marginEnd="5dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey">
+
+        <LinearLayout
+            style="@style/itemLinearLayout"
+            android:id="@+id/UserEditorStep1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+            <TextView style="@style/titleTextView"
+                android:textSize="18sp"
+                android:text="名字："/>
+
+            <EditText
+                android:id="@+id/UserEditorNameET"
+                style="@style/defaultTextEditor"
+                android:hint="输入名字" />
+            <TextView style="@style/noticeTextView"
+                android:id="@+id/UserEditorNameChecker"
+                android:text=""/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/UserEditorStep2"
+            style="@style/itemLinearLayout"
+            app:layout_constraintTop_toBottomOf="@id/UserEditorStep1"
+            tools:ignore="MissingConstraints">
+            <TextView style="@style/titleTextView"
+                android:textSize="18sp"
+                android:text="模式："/>
+            <Spinner
+                android:id="@+id/UserEditorModeSP"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:entries="@array/modes" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/UserEditorStep3"
+            style="@style/itemLinearLayout"
+            app:layout_constraintTop_toBottomOf="@id/UserEditorStep2"
+            tools:ignore="MissingConstraints">
+            <TextView style="@style/titleTextView"
+                android:textSize="18sp"
+                android:text="选择[今天]的班次："/>
+
+            <Spinner
+                android:id="@+id/UserEditorShiftChooseSP"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/UserEditorConfirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/UserEditorStep3"
+            android:background="@drawable/white_general_background"
+            android:layout_margin="10dp"
+            android:text="完成配置"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</LinearLayout>
